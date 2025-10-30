@@ -76,8 +76,7 @@ Veja o diagrama do projeto em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Dia
 │
 └── README.md
 
-
----
+```
 
 ## Fluxo de CI/CD — Integração Contínua e Entrega Contínua
 
