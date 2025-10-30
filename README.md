@@ -27,7 +27,9 @@ A solução foi desenhada para ser **escalável, resiliente e observável**, com
 
 ## ATENÇÃO:
 Leia sobre a estrutura do projeto em [`docs/Projeto_Fintec_LeadTech.pdf`](docs/Projeto_Fintec_LeadTech.pdf)
+
 Leia sobre motivo do Backend do projeto em Laravel em [`docs/Projeto_KYC_Fintec_Laravel.pdf`](docs/Projeto_KYC_Fintec_Laravel.pdf)
+
 Veja o diagrama do projeto em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Diagrama_Fintec.png)
 
 ---
