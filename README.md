@@ -1,6 +1,6 @@
 # Fintech Platform
 
-![Architecture](docs/Diagrama_Arquitetura_Fintech.png)
+![Architecture](docs/Diagrama_Fintec.png)
 
 ## Visão Geral
 
@@ -25,7 +25,7 @@ A solução foi desenhada para ser **escalável, resiliente e observável**, com
 - **Monitoramento** → Prometheus / Grafana / ELK Stack  
 - **Infraestrutura** → Docker / Kubernetes / Terraform  
 
-Veja o diagrama completo em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Diagrama_Arquitetura_Fintech.png)
+Veja o diagrama completo em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Diagrama_Fintec.png)
 
 ---
 
