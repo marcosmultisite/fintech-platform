@@ -1,25 +1,29 @@
-name: CI/CD Pipeline
+name: CI/CD
 
 on:
   push:
-    branches: [main, develop]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build:
+  build-test-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.2'
-
-      - name: Install Dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+      - name: Build Docker Containers
+        run: docker-compose -f docker/docker-compose.yml build
 
       - name: Run Tests
-        run: php artisan test
+        run: docker-compose run --rm app npm test
+
+      - name: Deploy to Staging
+        if: success()
+        run: echo "Deploying to staging environment..."
+
+      - name: Deploy to Production
+        if: github.event_name == 'push' && success()
+        run: echo "Deploying to production..."
