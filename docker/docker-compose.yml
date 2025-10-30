@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ../src/api-gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - auth-service
+      - user-service
+      - loan-service
+      - payment-service
+
+  auth-service:
+    build: ../src/auth-service
+    ports:
+      - "8001:8000"
+
+  user-service:
+    build: ../src/user-service
+    ports:
+      - "8002:8000"
+
+  loan-service:
+    build: ../src/loan-service
+    ports:
+      - "8003:8000"
+
+  payment-service:
+    build: ../src/payment-service
+    ports:
+      - "8004:8000"
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fintech
+    ports:
+      - "3306:3306"
