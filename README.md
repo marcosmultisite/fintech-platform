@@ -25,34 +25,51 @@ A solução foi desenhada para ser **escalável, resiliente e observável**, com
 - **Monitoramento** → Prometheus / Grafana / ELK Stack  
 - **Infraestrutura** → Docker / Kubernetes / Terraform  
 
-Veja o diagrama completo em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Diagrama_Fintec.png)
+## ATENÇÃO:
+Leia sobre a estrutura do projeto em [`docs/Projeto_Fintec_LeadTech.pdf`](docs/Projeto_Fintec_LeadTech.pdf)
+Leia sobre motivo do Backend do projeto em Laravel em [`docs/Projeto_KYC_Fintec_Laravel.pdf`](docs/Projeto_KYC_Fintec_Laravel.pdf)
+Veja o diagrama do projeto em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Diagrama_Fintec.png)
 
 ---
 
 ## Estrutura do Projeto
 
 ```bash
-fintech-platform/
-├── docs/
-│   ├── Documento_Explicativo.pdf
-│   ├── Diagrama_Arquitetura_Fintech.png
-│   └── DER.png
+.
 ├── src/
 │   ├── api-gateway/
+│   │   ├── index.js
+│   │   ├── package.json
+│   │   └── routes.js
 │   ├── auth-service/
+│   │   └── AuthController.php
 │   ├── user-service/
+│   │   └── UserController.php
 │   ├── loan-service/
+│   │   └── LoanController.php
 │   ├── payment-service/
-│   └── integrations/
+│   │   └── PaymentController.php
+│   └── integration/
+│       ├── ReceitaFederalAPI.php
+│       ├── OpenFinanceAPI.php
+│       └── CnhRgValidation.php
+│
+├── docker/
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml
+│
 ├── tests/
 │   ├── unit/
 │   ├── integration/
 │   └── e2e/
-├── docker/
-│   ├── docker-compose.yml
-│   └── Dockerfile
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml
-├── README.md
-└── package.json / composer.json
+│
+├── docs/
+│   ├── Diagrama_Fintec.png
+│   ├── Projeto_Fintec_LeadTech.pdf
+│   └── Projeto_KYC_Fintec_Laravel.pdf
+│
+└── README.md
