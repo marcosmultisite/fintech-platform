@@ -1,8 +1,8 @@
-# 🏦 Fintech Platform — Tech Lead Challenge
+# Fintech Platform
 
 ![Architecture](docs/Diagrama_Arquitetura_Fintech.png)
 
-## 📘 Visão Geral
+## Visão Geral
 
 Este repositório contém o **desenho arquitetural e plano técnico** de uma plataforma **fintech** moderna, projetada para oferecer:
 - Cadastro de usuários via aplicativo mobile  
@@ -14,7 +14,7 @@ A solução foi desenhada para ser **escalável, resiliente e observável**, com
 
 ---
 
-## 🧩 Arquitetura de Alto Nível
+## Arquitetura de Alto Nível
 
 **Camadas principais:**
 - **Frontend (Mobile/Web)** → Flutter / React Native  
@@ -29,7 +29,7 @@ Veja o diagrama completo em [`docs/Diagrama_Arquitetura_Fintech.png`](docs/Diagr
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```bash
 fintech-platform/
