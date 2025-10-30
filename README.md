@@ -84,22 +84,24 @@ O projeto utiliza **GitHub Actions** para automatizar todo o ciclo de desenvolvi
 
 ### Diagrama do Pipeline CI/CD
 
+### 🔄 Diagrama do Pipeline CI/CD
+
 ```mermaid
 flowchart LR
-    A[Commit / Push] --> B[GitHub Actions CI Trigger]
-    B --> C[Build: Docker Compose]
-    C --> D[Testes Automatizados]
-    D --> E{Testes OK?}
-    E -- Não --> F[Notificar Falha no Workflow]
-    E -- Sim --> G[Deploy Automatizado]
+    A["Commit / Push"] --> B["GitHub Actions CI Trigger"]
+    B --> C["Build: Docker Compose"]
+    C --> D["Testes Automatizados"]
+    D --> E{"Testes OK?"}
+    E -- "Não" --> F["Notificar Falha no Workflow"]
+    E -- "Sim" --> G["Deploy Automatizado"]
 
-    G --> H[Ambiente de Homologação (Staging)]
-    H --> I[Testes E2E e Smoke Tests]
-    I --> J{Aprovado para Produção?}
-    J -- Não --> F
-    J -- Sim --> K[Deploy em Produção]
+    G --> H["Ambiente de Homologação (Staging)"]
+    H --> I["Testes E2E e Smoke Tests"]
+    I --> J{"Aprovado para Produção?"}
+    J -- "Não" --> F
+    J -- "Sim" --> K["Deploy em Produção"]
 
-    K --> L[Serviço Online ]
+    K --> L["Serviço Online"]
 
     style A fill:#6ee7b7,stroke:#047857,stroke-width:2px
     style B fill:#93c5fd,stroke:#1e3a8a,stroke-width:2px
@@ -107,3 +109,4 @@ flowchart LR
     style D fill:#fde68a,stroke:#92400e,stroke-width:2px
     style G fill:#bbf7d0,stroke:#166534,stroke-width:2px
     style K fill:#86efac,stroke:#15803d,stroke-width:2px
+
